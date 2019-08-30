@@ -21,7 +21,7 @@
           </el-checkbox-group>
           <div class="search">
             <el-button type="primary" @click="searchQuestionData()">搜索</el-button>
-            <el-button @click="resetForm('ruleForm')">重置</el-button>
+            <el-button @click="resetForm1('ruleForm')">重置</el-button>
           </div>
         </div>
       </el-form-item>
@@ -41,7 +41,7 @@
       <el-table-column prop="questionTitle" label="题目" min-width="100" align="center"></el-table-column>
     </el-table>
     <div class="finish">
-      <el-button type="primary" @click="searchQuestionData()">完成</el-button>
+      <el-button type="primary" @click="finishSelect()">完成</el-button>
       <el-button @click="resetForm()">重置</el-button>
     </div>
   </div>
@@ -136,8 +136,14 @@ export default {
   },
   methods: {
     searchQuestionData(row) {
+        
+    },
+    finishSelect(row) {
         this.$router.push({ name: "previewPaper" });
     },
+    resetForm1(formName) {
+        this.$refs[formName].resetFields();
+      },
     resetForm(formName) {
       this.$refs.multipleTable.clearSelection();
     },
