@@ -19,7 +19,17 @@ export default new Router({
     {
       path: '/createPaper',
       name: 'createPaper',
-      component: () => import('@/components/user/createPaper/createPaper')
+      component: () => import('@/components/user/createPaper/createPaper'),
+    },
+    {
+      path: '/previewPaper',
+      name: 'previewPaper',
+      component: () => import('@/components/user/createPaper/previewPaper')
+    },
+    {
+      path: '/selectQuestions',
+      name: 'selectQuestions',
+      component: () => import('@/components/user/createPaper/selectQuestions')
     },
     {
       path: '/allQuestion',
